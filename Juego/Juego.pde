@@ -1,5 +1,14 @@
+//Usamos una librería minim para reproducir sonido
+import ddf.minim.*;
+Minim minim;
+AudioPlayer player;
+
 //import processing.sound.*;
 //SoundFile file;
+
+PFont font;
+
+//Estas variables booleanas permitirán establecer qué escenario vamos a ver
 boolean menu = true;
 boolean game = false;
 
@@ -25,21 +34,37 @@ void setup() {
   size(1060, 490);
 
   //Se carga el fondo
-  Fondo=loadImage("image.jpg");
+  Fondo=loadImage("nosmatan.jpg");
   //Y se inserta en el array las posiciones del personaje
   for (int i = 0; i < images.length; i++) {
     images[i] = loadImage("lider" + i + ".png");
   }
 
+  //Aquí cargamos la fuente del título
+  font = loadFont("titulo.vlw");
+
+  //Aquí agregamos el sonido
+  minim = new Minim(this);
+  player = minim.loadFile("menu.mp3"); 
+
   //file = new SoundFile(this, "menu.mp3");
   //file.play();
 }
+
+
+
 void draw() {
 
   if (menu) {
+    player.play();
     //Se establece el fondo
     image(Fondo, 0, 0, width, height);
-    text("holaaa", 98, 98, 400, 400);
+
+    //Y el título
+    strokeWeight(23);
+    stroke(0);
+    textFont(font, 80);
+    text("Líderes Sociales' Quest", width*0.083, height*0.1, width*0.91666, height*0.4);
   }
 
   if (game) {
