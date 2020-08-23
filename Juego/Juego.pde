@@ -1,11 +1,14 @@
+int e = 0;
+
+//Clase para el movimiento del personaje
+movimiento movimiento;
+
 //Usamos una librería minim para reproducir sonido
 import ddf.minim.*;
 Minim minim;
 AudioPlayer player;
 
-//import processing.sound.*;
-//SoundFile file;
-
+//Fuente del título
 PFont font;
 
 //Estas variables booleanas permitirán establecer qué escenario vamos a ver
@@ -23,6 +26,8 @@ float y=50;
 //Aquí se anexa tanto al personaje como el fondo
 PImage Lider;
 PImage Fondo;
+PImage boton;
+PImage edad;
 
 //este array servirá para almacenar las imágenes
 PImage [] images = new PImage[maxImages];
@@ -30,6 +35,10 @@ PImage [] images = new PImage[maxImages];
 
 
 void setup() {
+  
+  //Objeto para el movimiento
+  movimiento = new movimiento();
+  
   //Tamaño de la ventana
   size(1060, 490);
 
@@ -38,7 +47,9 @@ void setup() {
   //Y se inserta en el array las posiciones del personaje
   for (int i = 0; i < images.length; i++) {
     images[i] = loadImage("lider" + i + ".png");
-  }
+  
+  boton = loadImage("playbutton.png");
+  edad = loadImage("trece.png");
 
   //Aquí cargamos la fuente del título
   font = loadFont("titulo.vlw");
@@ -46,59 +57,51 @@ void setup() {
   //Aquí agregamos el sonido
   minim = new Minim(this);
   player = minim.loadFile("menu.mp3"); 
+  }
 
-  //file = new SoundFile(this, "menu.mp3");
-  //file.play();
+  //Y esto permitirá que el sonido se reproduzca en el menú
+  if (menu) {
+    player.loop();
+  }
 }
 
 
 
 void draw() {
-
-  if (menu) {
-    player.play();
-    //Se establece el fondo
+  
+   switch(e){
+    
+    case 1:
+    y = 7;
+    break;
+    
+    default:
+        //Se establece el fondo
     image(Fondo, 0, 0, width, height);
+    
+    image(boton,width*0.4,height*0.4,width*0.2,height*0.25);
+    
+    image(edad, width*0.03, height*0.8, width*0.05, height*0.15);
 
     //Y el título
     strokeWeight(23);
     stroke(0);
     textFont(font, 80);
     text("Líderes Sociales' Quest", width*0.083, height*0.1, width*0.91666, height*0.4);
+    
+    rect();
+    
   }
+  //if (menu) {
+  //  //Se establece el fondo
+  //  image(Fondo, 0, 0, width, height);
+    
+  //  image(boton,width/2,height/2,width*0.1,height*0.1);
 
-  if (game) {
-
-    //Aquí está el ciclo del personaje
-    image(images[imageIndex], x, y, 50, 60);
-    imageIndex = (imageIndex+1)% images.length;
-
-    //Aquí, el ciclo if servirá para el movimiento del personaje
-    if (keyPressed && (key== CODED)) {
-      if (keyCode == LEFT) {
-        x-=16;
-      }
-      if (keyCode== RIGHT) {
-        x+=16;
-      }
-      if (keyCode== UP) {
-        y -=16;
-      } 
-      if (keyCode==DOWN) {
-        y+=16;
-      }
-    }
-    if (y>=400) {
-      y = 400;
-    }
-    if (x>width) {
-      x=0;
-    } else if (x<0) {
-      x=width;
-    }
+  //  //Y el título
+  //  strokeWeight(23);
+  //  stroke(0);
+  //  textFont(font, 80);
+  //  text("Líderes Sociales' Quest", width*0.083, height*0.1, width*0.91666, height*0.4);
+    
   }
-}
-
-void mousePressed() {
-  game = true;
-}
