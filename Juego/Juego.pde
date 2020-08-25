@@ -1,23 +1,30 @@
-int e = 0;
+Mario mari;
+
+boolean juego = false;
+
+
+import sprites.*;
+import sprites.maths.*;
+import sprites.utils.*;
+
+//Definir el objeto Sprite
+Sprite mario;
+StopWatch sw = new StopWatch();
+
+//Clase para el menú
+Menu menu;
 
 //Clase para el movimiento del personaje
 movimiento movimiento;
 
 //Usamos una librería minim para reproducir sonido
 import ddf.minim.*;
-Minim minim;
-AudioPlayer player;
-
-//Fuente del título
-PFont font;
 
 //Estas variables booleanas permitirán establecer qué escenario vamos a ver
-boolean menu = true;
-boolean game = false;
+int state = 0;
 
 //Funcionan como contadores para el ciclo for
 int maxImages = 3;
-int imageIndex = 1;
 
 //Posición inicial del personaje
 float x=50;
@@ -25,9 +32,6 @@ float y=50;
 
 //Aquí se anexa tanto al personaje como el fondo
 PImage Lider;
-PImage Fondo;
-PImage boton;
-PImage edad;
 
 //este array servirá para almacenar las imágenes
 PImage [] images = new PImage[maxImages];
@@ -35,73 +39,57 @@ PImage [] images = new PImage[maxImages];
 
 
 void setup() {
-  
-  //Objeto para el movimiento
+      menu = new Menu(this,"data/menu.mp3");
   movimiento = new movimiento();
-  
-  //Tamaño de la ventana
   size(1060, 490);
-
-  //Se carga el fondo
-  Fondo=loadImage("nosmatan.jpg");
-  //Y se inserta en el array las posiciones del personaje
   for (int i = 0; i < images.length; i++) {
     images[i] = loadImage("lider" + i + ".png");
+  }
   
-  boton = loadImage("playbutton.png");
-  edad = loadImage("trece.png");
-
-  //Aquí cargamos la fuente del título
-  font = loadFont("titulo.vlw");
-
-  //Aquí agregamos el sonido
-  minim = new Minim(this);
-  player = minim.loadFile("menu.mp3"); 
-  }
-
-  //Y esto permitirá que el sonido se reproduzca en el menú
-  if (menu) {
-    player.loop();
-  }
+  mari = new Mario(this);
+  
+  mario = new Sprite(this, "data/mario.png", 12, 1, 1);
+  mario.setFrameSequence(8, 12, 0.1);
 }
 
 
 
 void draw() {
-  
-   switch(e){
-    
-    case 1:
-    y = 7;
+   
+  switch (state) {
+  case 0:
+    menu.bk();
+    break;
+
+  case 1:
+    background(0);
+    movimiento.lider();
+    movimiento.lidero();
+    movimiento.mover();
+    movimiento.moveru();
+    movimiento.mapa();
     break;
     
-    default:
-        //Se establece el fondo
-    image(Fondo, 0, 0, width, height);
-    
-    image(boton,width*0.4,height*0.4,width*0.2,height*0.25);
-    
-    image(edad, width*0.03, height*0.8, width*0.05, height*0.15);
+    case 2:
+    background(255);
+    break;
 
-    //Y el título
-    strokeWeight(23);
-    stroke(0);
-    textFont(font, 80);
-    text("Líderes Sociales' Quest", width*0.083, height*0.1, width*0.91666, height*0.4);
-    
-    rect();
-    
+  default:
+    background(0);
+    break;
   }
-  //if (menu) {
-  //  //Se establece el fondo
-  //  image(Fondo, 0, 0, width, height);
-    
-  //  image(boton,width/2,height/2,width*0.1,height*0.1);
+}
 
-  //  //Y el título
-  //  strokeWeight(23);
-  //  stroke(0);
-  //  textFont(font, 80);
-  //  text("Líderes Sociales' Quest", width*0.083, height*0.1, width*0.91666, height*0.4);
-    
+void mousePressed() {
+  //image(boton, width*0.4, height*0.4, widthplayer.loop();*0.2, height*0.25);
+  if (mouseX >= width*0.4 && mouseX <= width*0.6 && mouseY >= height*0.4 && mouseY <= width*0.65) {
+    state = 1;
+    juego = true;
   }
+  
+  if(juego){
+  if(mouseX >=0 && mouseX<=width*0.05 && mouseY >=0 && mouseY <=height*0.05){
+    state = 2;
+  }
+  }
+}

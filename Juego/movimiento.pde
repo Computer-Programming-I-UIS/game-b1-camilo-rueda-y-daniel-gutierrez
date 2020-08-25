@@ -13,6 +13,8 @@ class movimiento {
   int imageIndex = 0;
 
   PImage [] images = new PImage[maxImages];
+  
+  
 
 
 
