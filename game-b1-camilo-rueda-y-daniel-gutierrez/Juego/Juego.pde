@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Mario mari;
 
 boolean juego = false;
@@ -93,22 +92,4 @@ void mousePressed() {
     state = 2;
   }
   }
-=======
-movimiento movimiento;
- PImage Fondo;
-void setup(){
-  size(1060,490);
-  Fondo=loadImage("fondo1.jpg");
-  movimiento = new movimiento();
 }
-void draw(){
-  background(Fondo);
-  movimiento.lider();
-  movimiento.lidero();
-  movimiento.mapa();
-  movimiento.mover();
-  movimiento.moveru();
->>>>>>> e7b7ec86382d294939f3f3d307661264dac4e884
-}
-    
-  
