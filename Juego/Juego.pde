@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Mario mari;
 
 boolean juego = false;
@@ -40,6 +39,7 @@ PImage [] images = new PImage[maxImages];
 
 
 void setup() {
+  frameRate(30);
       menu = new Menu(this,"data/menu.mp3");
   movimiento = new movimiento();
   size(1060, 490);
@@ -64,10 +64,13 @@ void draw() {
 
   case 1:
     background(0);
+    
     movimiento.lider();
+    keyReleased();
+    
+   
     movimiento.lidero();
-    movimiento.mover();
-    movimiento.moveru();
+    keyReleased();
     movimiento.mapa();
     break;
     
@@ -80,7 +83,40 @@ void draw() {
     break;
   }
 }
-
+void keyReleased() {
+  if (key == CODED)
+      {
+           if (keyCode == LEFT){
+             movimiento.releaseKey(0);
+           }
+           if (keyCode == RIGHT){
+             movimiento.releaseKey(1);
+           }
+           if (keyCode == UP){
+             movimiento.releaseKey(2);
+           }
+           if (keyCode == DOWN){
+             movimiento.releaseKey(3);
+           }
+    }else{
+            if (keyCode == 'a'){
+             movimiento.releaseKey(4);
+           }
+           if (keyCode == 'd'){
+             movimiento.releaseKey(5);
+           }
+           if (keyCode == 'w'){
+             movimiento.releaseKey(6);
+           }
+           if (keyCode == 's'){
+             movimiento.releaseKey(7);
+           }
+    }
+  
+}
+void keyPressed(){
+  movimiento.keyPress();
+}
 void mousePressed() {
   //image(boton, width*0.4, height*0.4, widthplayer.loop();*0.2, height*0.25);
   if (mouseX >= width*0.4 && mouseX <= width*0.6 && mouseY >= height*0.4 && mouseY <= width*0.65) {
@@ -93,22 +129,4 @@ void mousePressed() {
     state = 2;
   }
   }
-=======
-movimiento movimiento;
- PImage Fondo;
-void setup(){
-  size(1060,490);
-  Fondo=loadImage("fondo1.jpg");
-  movimiento = new movimiento();
 }
-void draw(){
-  background(Fondo);
-  movimiento.lider();
-  movimiento.lidero();
-  movimiento.mapa();
-  movimiento.mover();
-  movimiento.moveru();
->>>>>>> e7b7ec86382d294939f3f3d307661264dac4e884
-}
-    
-  
