@@ -34,4 +34,4 @@ En otros aspectos como la jugabilidad y diseño de personajes nos basamos princi
 ![](https://github.com/Computer-Programming-I-UIS/game-b1-camilo-rueda-y-daniel-gutierrez/blob/master/game-b1-camilo-rueda-y-daniel-gutierrez/Juego/data/supermario.jpg)
 
 ### fireboy and watergirl
-![](https://github.com/Computer-Programming-I-UIS/game-b1-camilo-rueda-y-daniel-gutierrez/blob/master/game-b1-camilo-rueda-y-daniel-gutierrez/Juego/data/unnamed.webp)
+![](https://github.com/Computer-Programming-I-UIS/game-b1-camilo-rueda-y-daniel-gutierrez/blob/master/fuego.webp)
