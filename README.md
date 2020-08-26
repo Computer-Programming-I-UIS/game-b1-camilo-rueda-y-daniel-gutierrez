@@ -31,7 +31,7 @@ Lideres sociales quest es un juego nuevo en principio, pues el concepto tanto co
 En otros aspectos como la jugabilidad y diseño de personajes nos basamos principalmente en 2 juegos:
 
 ### Mario Bros
-![](https://github.com/Computer-Programming-I-UIS/game-b1-camilo-rueda-y-daniel-gutierrez/blob/master/game-b1-camilo-rueda-y-daniel-gutierrez/Juego/data/supermario.jpg)
+![](https://github.com/Computer-Programming-I-UIS/game-b1-camilo-rueda-y-daniel-gutierrez/blob/master/mario.jpg)
 
 ### fireboy and watergirl
 ![](https://github.com/Computer-Programming-I-UIS/game-b1-camilo-rueda-y-daniel-gutierrez/blob/master/fuego.webp)
