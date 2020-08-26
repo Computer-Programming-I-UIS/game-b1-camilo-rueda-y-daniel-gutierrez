@@ -12,10 +12,9 @@ uno en el otro es fundamental para superar cada reto.***
 
 ## Especificaciones
 
-Para la inicializacion del juego, antes que todo tenemos que importar 2 bibliotecas, LA PRIMERA ES  **SPRITE**, la libreria se agrega yendo al interfaz de procesing, buscamos Sketch
-y le damos click, luego buscamos la opción importar biblioteca...,  se abre un cuadro donde selecionamos la opcion añadir biblioteca, buscamos sprite y le damos a descargar y en unos segundo la libreria queda marcada con un chulo y listo.
+Para la inicializacion del juego, antes que todo tenemos que importar 2 bibliotecas, LA PRIMERA ES  **minim**, la libreria se agrega yendo al interfaz de procesing, buscamos Sketch y le damos click, luego buscamos la opción importar biblioteca...,  se abre un cuadro donde selecionamos la opcion añadir biblioteca, buscamos minim y le damos a descargar y en unos segundo la libreria queda marcada con un chulo y listo.
 
- LA SEGUNDA LIBRERIA que debemos incluir es **minim** seguimos el procedimiento anterior para agregar esta libreria tambien.
+
  
  
  
