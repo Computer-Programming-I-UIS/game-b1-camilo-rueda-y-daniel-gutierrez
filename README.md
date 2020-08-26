@@ -22,7 +22,7 @@ Para la inicializacion del juego, antes que todo tenemos que importar 2 bibliote
 
 La jugabilidad de esta aventura es algo sencilla pues cada personaje se mueve con un teclas especificas, siendo las flechas el primer lider social y el segundo w, s, a, d.
  
-![](https://github.com/Computer-Programming-I-UIS/game-b1-camilo-rueda-y-daniel-gutierrez/blob/master/game-b1-camilo-rueda-y-daniel-gutierrez/Juego/data/jugabilidad.png)
+![](https://github.com/Computer-Programming-I-UIS/game-b1-camilo-rueda-y-daniel-gutierrez/blob/master/jugabilidad.png)
 
 ## Creditos
 
