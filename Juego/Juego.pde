@@ -48,13 +48,8 @@ float y=400;
 
 
 void setup() { 
-
-
-
+  setupButtons();
   size(1060, 490);
-
-
-
   Ciudadfondo=loadImage("ciudad.jpg");
   Ciudadfondo.resize(width, height);
   Fondo=loadImage("fondo1.jpg");
